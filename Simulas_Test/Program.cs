@@ -12,13 +12,11 @@ while (true)
     string menu = UserInteraction(Chest);
     Chest = ChestChange(menu, Chest);
 
+//Methods -----------------
 
-
-    //Methods -----------------
-
-    //Provides status and captures user's input
-    //Convert to lower to capture user input errors on word
-    //Other input errors will be handled by StateChange method
+//Provides status and captures user's input
+//Convert to lower to capture user input errors on word
+//Other input errors will be handled by StateChange method
     string UserInteraction(ChestState Chest)
     {
         Console.WriteLine($"\nThe chest is {Chest}.  What do you want to do?");
@@ -32,8 +30,8 @@ while (true)
         return action;
     }
 
-    //Checks chest and use selection to change chest status
-    //Error checking provided by else statment.  If the user's input was no correct error message provide and chest is not change.
+//Checks chest and use selection to change chest status
+//Error checking provided by else statment.  If the user's input was no correct error message provide and chest is not change.
     ChestState ChestChange(string menu, ChestState Chest)
     {
         if (Chest == ChestState.OPEN && menu == "close")
@@ -63,7 +61,6 @@ while (true)
         }
     }
 }
-
 
 // Enumerant -----------------
 enum ChestState { OPEN, CLOSED, LOCKED }
